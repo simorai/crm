@@ -27,19 +27,19 @@ class DatabaseSeeder extends Seeder
     {
         // --- Users ---
         $simao = User::firstOrCreate(
-            ['email' => 'spmmazb@gmail.com'],
+            ['email' => env('SEED_USER_EMAIL')],
             [
-                'name'              => 'Simao Morais',
-                'password'          => Hash::make('password'),
+                'name' => env('SEED_USER_NAME'),
+                'password' => Hash::make(env('SEED_USER_PASSWORD')),
                 'email_verified_at' => now(),
             ]
         );
 
         $demo = User::firstOrCreate(
-            ['email' => 'demo@inovcorp.io'],
+            ['email' => env('SEED_DEMO_EMAIL')],
             [
-                'name'              => 'Demo User',
-                'password'          => Hash::make('password'),
+                'name'              => env('SEED_DEMO_NAME'),
+                'password'          => Hash::make(env('SEED_DEMO_PASSWORD')),
                 'email_verified_at' => now(),
             ]
         );
